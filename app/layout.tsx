@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Tech 4 All • Empowering Communities Through Technology",
     description: "Bridging the digital divide through technology donations and community support.",
-    url: "https://your-domain.com",
+    url: "https://technology4all.vercel.app/",
     siteName: "Tech 4 All",
     images: [
       {

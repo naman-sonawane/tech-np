@@ -53,7 +53,7 @@ export default function Home() {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 1.0, ease: 'easeOut' }}
       >
-        <nav className="max-w-md mx-auto p-2 flex justify-between shadow-lg items-center bg-black rounded-full backdrop-blur-md border-0 border-blue-400">
+        <nav className="max-w-md mx-auto p-2 flex justify-between shadow-lg items-center bg-black  backdrop-blur-md border-0 border-blue-400">
           <motion.button 
             onClick={() => scrollToSection('hero')}
             className="text-2xl oswald font-black text-blue-500 transition-transform duration-300"
@@ -111,7 +111,7 @@ export default function Home() {
         
         {mobileMenuOpen && (
           <motion.div 
-            className="absolute top-full left-4 right-4 mt-2 bg-black/95 backdrop-blur-md border border-white/20 rounded-2xl px-6 py-4 shadow-lg md:hidden"
+            className="absolute top-full left-4 right-4 mt-2 bg-black/95 backdrop-blur-md border border-white/20  px-6 py-4 shadow-lg md:hidden"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
@@ -129,8 +129,8 @@ export default function Home() {
       <section id="hero" className="min-h-screen flex items-center justify-center bg-gradient-to-br text-black relative overflow-hidden">
         <div className="absolute inset-0"></div>
         <div className="absolute inset-0">
-          <div className="w-96 h-96 bg-blue-300/20 rounded-full blur-3xl absolute top-20 -left-48 animate-pulse"></div>
-          <div className="w-80 h-80 bg-white/10 rounded-full blur-3xl absolute bottom-20 -right-40 animate-pulse"></div>
+          <div className="w-96 h-96 bg-blue-300/20  blur-3xl absolute top-20 -left-48 animate-pulse"></div>
+          <div className="w-80 h-80 bg-white/10  blur-3xl absolute bottom-20 -right-40 animate-pulse"></div>
         </div>
         
         <div className="relative z-10 text-center max-w-4xl flex items-center justify-center flex-col mx-auto px-6">
@@ -171,7 +171,7 @@ export default function Home() {
           >
             <motion.button 
               onClick={() => scrollToSection('about')}
-              className="bg-blue-300 text-slate-800 px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-400 transition-all duration-300 shadow-lg"
+              className="bg-blue-300 text-slate-800 px-8 py-4  font-bold text-lg hover:bg-blue-400 transition-all duration-300 shadow-lg"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -179,7 +179,7 @@ export default function Home() {
             </motion.button>
             <motion.button 
               onClick={() => scrollToSection('contact')}
-              className="border-2 border-black text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-white bluehover:text-blue-400 transition-all duration-300"
+              className="border-2 border-black text-black px-8 py-4  font-bold text-lg hover:bg-white bluehover:text-blue-400 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -226,7 +226,7 @@ export default function Home() {
                   src="/shootingstar.svg" 
                   alt="Shooting Star" 
                   draggable="false" 
-                  className="h-16 w-16 border border-black select-none rounded-lg"
+                  className="h-16 w-16 border border-black select-none "
                   whileHover={{ rotate: 15, scale: 1.1 }}
                   transition={{ duration: 0.3 }}
                 />
@@ -259,7 +259,7 @@ export default function Home() {
               />
               
               <motion.span 
-                className="bob flex items-center gap-2 bg-white border border-black shadow-lg w-auto h-auto px-3 py-2 rounded-full absolute top-8 right-58 md:top-18 md:right-70 z-10 whitespace-nowrap"
+                className="bob flex items-center gap-2 bg-white border border-black shadow-lg w-auto h-auto px-3 py-2  absolute top-8 right-58 md:top-18 md:right-70 z-10 whitespace-nowrap"
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 1.2 }}
@@ -270,7 +270,7 @@ export default function Home() {
               </motion.span>
 
               <motion.span 
-                className="bob3 flex items-center gap-2 bg-white border border-black shadow-lg w-auto h-auto px-3 py-2 rounded-full absolute top-32 right-8 md:top-40 md:right-12 z-10 whitespace-nowrap"
+                className="bob3 flex items-center gap-2 bg-white border border-black shadow-lg w-auto h-auto px-3 py-2  absolute top-32 right-8 md:top-40 md:right-12 z-10 whitespace-nowrap"
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 1.4 }}
@@ -281,7 +281,7 @@ export default function Home() {
               </motion.span>
 
               <motion.span 
-                className="bob2 flex items-center gap-2 bg-white border border-black shadow-lg w-auto h-auto px-3 py-2 rounded-full absolute bottom-8 right-58 md:bottom-18 md:right-60 z-10 whitespace-nowrap"
+                className="bob2 flex items-center gap-2 bg-white border border-black shadow-lg w-auto h-auto px-3 py-2  absolute bottom-8 right-58 md:bottom-18 md:right-60 z-10 whitespace-nowrap"
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 1.6 }}
@@ -317,69 +317,69 @@ export default function Home() {
             variants={staggerContainer}
           >
             <motion.div 
-              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
+              className="bg-white p-8  shadow-lg hover:shadow-2xl transition-all duration-300"
               variants={cardVariants}
               whileHover={{ scale: 1.05, y: -10 }}
             >
-              <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-blue-600  flex items-center justify-center mb-6">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-blue-600 mb-4">Collection</h3>
               <p className="text-gray-700 mb-6">We collect unused or gently-used technology from offices, institutions, and community members. By giving this tech a second life, we help create new opportunities for those in need.</p>
-              <div className="rounded-lg overflow-hidden bg-blue-100 bg-opacity-10 hover:bg-opacity-0 transition duration-300">
+              <div className=" overflow-hidden bg-blue-100 bg-opacity-10 hover:bg-opacity-0 transition duration-300">
                 <img src="/sk_collection.png" alt="Collection" className="w-full object-cover" />
               </div>
             </motion.div>
 
             <motion.div 
-              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
+              className="bg-white p-8  shadow-lg hover:shadow-2xl transition-all duration-300"
               variants={cardVariants}
               whileHover={{ scale: 1.05, y: -10 }}
             >
-              <div className="w-16 h-16 bg-blue-300 rounded-xl flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-blue-300  flex items-center justify-center mb-6">
                 <svg className="w-8 h-8 text-blue-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-blue-600 mb-4">Fundraising</h3>
               <p className="text-gray-700 mb-6">We raise funds through community support and partnerships. These contributions allow us to purchase, repair, prepare, and distribute devices to those who need them most.</p>
-              <div className="rounded-lg overflow-hidden bg-blue-400 bg-opacity-10 hover:bg-opacity-0 transition duration-300">
+              <div className=" overflow-hidden bg-blue-400 bg-opacity-10 hover:bg-opacity-0 transition duration-300">
                 <img src="/sk_fundraising.png" alt="Fundraising" className="w-full bg-blue-300 object-cover" />
               </div>
             </motion.div>
 
             <motion.div 
-              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
+              className="bg-white p-8  shadow-lg hover:shadow-2xl transition-all duration-300"
               variants={cardVariants}
               whileHover={{ scale: 1.05, y: -10 }}
             >
-              <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-blue-600  flex items-center justify-center mb-6">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-blue-600 mb-4">Distribution</h3>
               <p className="text-gray-700 mb-6">We assess, clean, and repair devices to ensure they&apos;re ready for use. We work with charities, local groups, and schools to reach under-resourced communities.</p>
-              <div className="rounded-lg overflow-hidden bg-blue-100 bg-opacity-10 hover:bg-opacity-0 transition duration-300">
+              <div className=" overflow-hidden bg-blue-100 bg-opacity-10 hover:bg-opacity-0 transition duration-300">
                 <img src="/sk_distribution.png" alt="Distribution" className="w-full object-cover" />
               </div>
             </motion.div>
 
             <motion.div 
-              className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
+              className="bg-white p-8  shadow-lg hover:shadow-2xl transition-all duration-300"
               variants={cardVariants}
               whileHover={{ scale: 1.05, y: -10 }}
             >
-              <div className="w-16 h-16 bg-blue-300 rounded-xl flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-blue-300  flex items-center justify-center mb-6">
                 <svg className="w-8 h-8 text-blue-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.25a9.75 9.75 0 110 19.5 9.75 9.75 0 010-19.5z"></path>
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-blue-600 mb-4">Follow-up</h3>
               <p className="text-gray-700 mb-6">After distribution, we stay in touch to offer ongoing support and help resolve any issues. We ensure the technology is working well and being used effectively.</p>
-              <div className="rounded-lg overflow-hidden bg-blue-100 bg-opacity-10 hover:bg-opacity-0 transition duration-300">
+              <div className=" overflow-hidden bg-blue-100 bg-opacity-10 hover:bg-opacity-0 transition duration-300">
                 <img src="/sk_followup.png" alt="Follow-up" className="w-full object-cover" />
               </div>
             </motion.div>
@@ -413,7 +413,7 @@ export default function Home() {
               variants={cardVariants}
             >
               <motion.div 
-                className="w-24 h-24 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
+                className="w-24 h-24 bg-gradient-to-br from-blue-600 to-blue-800  flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
                 whileHover={{ scale: 1.2, rotate: 5 }}
               >
                 <span className="text-4xl font-black text-white">1</span>
@@ -422,7 +422,7 @@ export default function Home() {
               <p className="text-gray-700 mb-6">Help us bridge the digital divide with your support. You can make a difference through monetary donations or by contributing gently used tech like laptops, tablets, or phones.</p>
               <motion.button 
                 onClick={() => scrollToSection('contact')}
-                className="bg-blue-600 text-white px-8 py-3 rounded-full font-bold hover:bg-blue-800 transition-all duration-300"
+                className="bg-blue-600 text-white px-8 py-3  font-bold hover:bg-blue-800 transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -435,7 +435,7 @@ export default function Home() {
               variants={cardVariants}
             >
               <motion.div 
-                className="w-24 h-24 bg-gradient-to-br from-blue-300 to-blue-400 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
+                className="w-24 h-24 bg-gradient-to-br from-blue-300 to-blue-400  flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
                 whileHover={{ scale: 1.2, rotate: -5 }}
               >
                 <span className="text-4xl font-black text-blue-800">2</span>
@@ -444,7 +444,7 @@ export default function Home() {
               <p className="text-gray-700 mb-6">Be part of the hands-on impact! Volunteers help us gather, repair, and distribute donated tech to those in need. Whether you&apos;re tech-savvy or just passionate about helping others.</p>
               <motion.button 
                 onClick={() => scrollToSection('contact')}
-                className="bg-blue-300 text-blue-800 px-8 py-3 rounded-full font-bold hover:bg-blue-400 transition-all duration-300"
+                className="bg-blue-300 text-blue-800 px-8 py-3  font-bold hover:bg-blue-400 transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -457,7 +457,7 @@ export default function Home() {
               variants={cardVariants}
             >
               <motion.div 
-                className="w-24 h-24 bg-gradient-to-br from-blue-600 to-blue-800 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
+                className="w-24 h-24 bg-gradient-to-br from-blue-600 to-blue-800  flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300"
                 whileHover={{ scale: 1.2, rotate: 5 }}
               >
                 <span className="text-4xl font-black text-white">3</span>
@@ -466,7 +466,7 @@ export default function Home() {
               <p className="text-gray-700 mb-6">Not ready to donate or volunteer? You can still make a huge difference by spreading the word. Follow us on social media, share our mission, and help raise awareness.</p>
               <motion.button 
                 onClick={() => scrollToSection('contact')}
-                className="bg-blue-600 text-white px-8 py-3 rounded-full font-bold hover:bg-blue-800 transition-all duration-300"
+                className="bg-blue-600 text-white px-8 py-3  font-bold hover:bg-blue-800 transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -505,15 +505,15 @@ export default function Home() {
               </p>
               <div className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
-                  <input type="text" placeholder="First name*" className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300" />
-                  <input type="text" placeholder="Last name*" className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300" />
+                  <input type="text" placeholder="First name*" className="w-full px-4 py-3  bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300" />
+                  <input type="text" placeholder="Last name*" className="w-full px-4 py-3  bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300" />
                 </div>
-                <input type="email" placeholder="Email*" className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300" />
-                <input type="tel" placeholder="Phone" className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300" />
-                <input type="text" placeholder="Title*" className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300" />
-                <textarea placeholder="Message" rows={4} className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300 resize-none"></textarea>
+                <input type="email" placeholder="Email*" className="w-full px-4 py-3  bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300" />
+                <input type="tel" placeholder="Phone" className="w-full px-4 py-3  bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300" />
+                <input type="text" placeholder="Title*" className="w-full px-4 py-3  bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300" />
+                <textarea placeholder="Message" rows={4} className="w-full px-4 py-3  bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300 resize-none"></textarea>
                 <motion.button 
-                  className="bg-blue-300 text-blue-800 px-8 py-3 rounded-full font-bold hover:bg-blue-400 transition-all duration-300"
+                  className="bg-blue-300 text-blue-800 px-8 py-3  font-bold hover:bg-blue-400 transition-all duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -524,18 +524,18 @@ export default function Home() {
             
             <motion.div variants={cardVariants}>
               <h3 className="text-3xl font-bold mb-8">Support The Cause</h3>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+              <div className="bg-white/10 backdrop-blur-sm  p-8 border border-white/20">
                 <h4 className="text-2xl font-bold mb-6">Leave a one-time donation</h4>
                 <div className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
-                    <input type="text" placeholder="First name" className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300" />
-                    <input type="text" placeholder="Last name" className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300" />
+                    <input type="text" placeholder="First name" className="w-full px-4 py-3  bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300" />
+                    <input type="text" placeholder="Last name" className="w-full px-4 py-3  bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300" />
                   </div>
-                  <input type="email" placeholder="Email" className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300" />
-                  <input type="text" placeholder="Donate in the name of:" className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300" />
-                  <input type="text" placeholder="How did you hear about us?" className="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300" />
+                  <input type="email" placeholder="Email" className="w-full px-4 py-3  bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300" />
+                  <input type="text" placeholder="Donate in the name of:" className="w-full px-4 py-3  bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300" />
+                  <input type="text" placeholder="How did you hear about us?" className="w-full px-4 py-3  bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300" />
                   <motion.button 
-                    className="w-full bg-blue-300 text-blue-800 px-8 py-3 rounded-full font-bold hover:bg-blue-400 transition-all duration-300"
+                    className="w-full bg-blue-300 text-blue-800 px-8 py-3  font-bold hover:bg-blue-400 transition-all duration-300"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
