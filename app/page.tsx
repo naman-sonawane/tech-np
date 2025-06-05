@@ -21,7 +21,8 @@ export default function Home() {
   // Animation variants similar to your portfolio
   const textVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 1.2, ease: 'easeOut' } },
+    visible: { opacity: 1, y: 0 },
+    transition: { duration: 1.2, ease: 'easeOut' }
   };
 
   const cardVariants = {
@@ -158,7 +159,8 @@ export default function Home() {
             className="text-2xl md:text-3xl font-light mb-12 opacity-90"
             initial="hidden"
             animate="visible"
-            variants={{ ...textVariants, transition: { duration: 1.2, ease: 'easeOut', delay: 0.3 } }}
+            variants={textVariants}
+            transition={{ duration: 1.2, ease: 'easeOut', delay: 0.3 }}
           >
             We're a non-profit aiming to bridge the digital divide and unlock new opportunities for underserved communities.
           </motion.p>
@@ -167,7 +169,8 @@ export default function Home() {
             className="flex flex-col sm:flex-row gap-6 items-center justify-center"
             initial="hidden"
             animate="visible"
-            variants={{ ...textVariants, transition: { duration: 1.2, ease: 'easeOut', delay: 0.6 } }}
+            variants={textVariants}
+            transition={{ duration: 1.2, ease: 'easeOut', delay: 0.6 }}
           >
             <motion.button 
               onClick={() => scrollToSection('about')}
@@ -237,14 +240,14 @@ export default function Home() {
                 className="text-xl leading-relaxed text-black mb-8"
                 variants={textVariants}
               >
-                At Tech 4 All, our mission is to bridge the digital divide by providing equitable access to technology, digital literacy, and opportunity for underserved communities. We believe that in today's world, access to technology isn't a luxury—it's a lifeline.
+                At Tech 4 All, our mission is to bridge the digital divide by providing equitable access to technology, digital literacy, and opportunity for underserved communities. We believe that in today&apos;s world, access to technology isn&apos;t a luxury—it&apos;s a lifeline.
               </motion.p>
               
               <motion.p 
                 className="text-xl leading-relaxed text-black"
                 variants={textVariants}
               >
-                Whether it's a student needing technology for school, healthcare, work, or for personal use, we're here to empower every individual with the tools they need to thrive. Through community partnerships, tech donations, and fundraising, we aim to create a more connected, inclusive, and empowered future where no one is left behind.
+                Whether it&apos;s a student needing technology for school, healthcare, work, or for personal use, we&apos;re here to empower every individual with the tools they need to thrive. Through community partnerships, tech donations, and fundraising, we aim to create a more connected, inclusive, and empowered future where no one is left behind.
               </motion.p>
             </motion.div>
             
@@ -366,7 +369,7 @@ export default function Home() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-blue-600 mb-4">Distribution</h3>
-              <p className="text-gray-700 mb-6">We assess, clean, and repair devices to ensure they're ready for use. We work with charities, local groups, and schools to reach under-resourced communities.</p>
+              <p className="text-gray-700 mb-6">We assess, clean, and repair devices to ensure they&apos;re ready for use. We work with charities, local groups, and schools to reach under-resourced communities.</p>
               <div className="rounded-lg overflow-hidden bg-blue-100 bg-opacity-10 hover:bg-opacity-0 transition duration-300">
                 <img src="/sk_distribution.png" alt="Distribution" className="w-full object-cover" />
               </div>
@@ -450,7 +453,7 @@ export default function Home() {
                 <span className="text-4xl font-black text-blue-800">2</span>
               </motion.div>
               <h3 className="text-3xl font-bold text-blue-600 mb-4">Volunteer</h3>
-              <p className="text-gray-700 mb-6">Be part of the hands-on impact! Volunteers help us gather, repair, and distribute donated tech to those in need. Whether you're tech-savvy or just passionate about helping others.</p>
+              <p className="text-gray-700 mb-6">Be part of the hands-on impact! Volunteers help us gather, repair, and distribute donated tech to those in need. Whether you&apos;re tech-savvy or just passionate about helping others.</p>
               <motion.button 
                 onClick={() => scrollToSection('contact')}
                 className="bg-blue-300 text-blue-800 px-8 py-3 rounded-full font-bold hover:bg-blue-400 transition-all duration-300"
@@ -512,7 +515,7 @@ export default function Home() {
             <motion.div variants={cardVariants}>
               <h3 className="text-3xl font-bold mb-8">Get In Touch</h3>
               <p className="text-xl opacity-90 pb-8 max-w-3xl mx-auto">
-                Whether you have gently used devices to donate, want to make a financial contribution, are interested in volunteering your time and expertise, or have any questions, we'd love to hear from you.
+                Whether you have gently used devices to donate, want to make a financial contribution, are interested in volunteering your time and expertise, or have any questions, we&apos;d love to hear from you.
               </p>
               <div className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
@@ -555,7 +558,7 @@ export default function Home() {
                 </div>
       
                 <p className="text-sm opacity-70 mt-4">
-                  Every donation helps put devices, connectivity, and training into the hands of people who need them most. Whether it's $10 or $1,000, every dollar moves us closer to digital equity.
+                  Every donation helps put devices, connectivity, and training into the hands of people who need them most. Whether it&apos;s $10 or $1,000, every dollar moves us closer to digital equity.
                 </p>
               </div>
             </motion.div>
