@@ -63,10 +63,7 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link 
-          href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&family=Rubik+Mono+One&display=swap" 
-          rel="stylesheet" 
-        />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet"/>
       </head>
       <body className={`${amiri.variable} ${roboto.variable} ${ubuntu.variable} ${oswald.variable} font-ubuntu antialiased`}>
         {children}
