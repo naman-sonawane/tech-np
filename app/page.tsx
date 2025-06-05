@@ -162,7 +162,7 @@ export default function Home() {
             variants={textVariants}
             transition={{ duration: 1.2, ease: 'easeOut', delay: 0.3 }}
           >
-            We're a non-profit aiming to bridge the digital divide and unlock new opportunities for underserved communities.
+            We&apos;re a non-profit aiming to bridge the digital divide and unlock new opportunities for underserved communities.
           </motion.p>
           
           <motion.div 
