@@ -18,7 +18,6 @@ export default function Home() {
     setMobileMenuOpen(false);
   };
 
-  // Animation variants similar to your portfolio
   const textVariants = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0 },
@@ -48,7 +47,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Animated Header */}
       <motion.header 
         className="fixed w-full top-0 z-50 p-4"
         initial={{ y: -100, opacity: 0 }}
@@ -128,7 +126,6 @@ export default function Home() {
         )}
       </motion.header>
 
-      {/* Hero Section */}
       <section id="hero" className="min-h-screen flex items-center justify-center bg-gradient-to-br text-black relative overflow-hidden">
         <div className="absolute inset-0"></div>
         <div className="absolute inset-0">
@@ -206,7 +203,6 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* About Section */}
       <motion.section 
         id="about" 
         className="min-h-[500px] py-20 bg-gradient-to-b from-blue-300 to-blue-200 border-2 rounded-[4rem] text-left"
@@ -299,7 +295,6 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Operations Section */}
       <motion.section 
         id="operations" 
         className="py-20 bg-blue-50"
@@ -321,7 +316,6 @@ export default function Home() {
             className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
             variants={staggerContainer}
           >
-            {/* Collection Card */}
             <motion.div 
               className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
               variants={cardVariants}
@@ -339,7 +333,6 @@ export default function Home() {
               </div>
             </motion.div>
 
-            {/* Fundraising Card */}
             <motion.div 
               className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
               variants={cardVariants}
@@ -357,7 +350,6 @@ export default function Home() {
               </div>
             </motion.div>
 
-            {/* Distribution Card */}
             <motion.div 
               className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
               variants={cardVariants}
@@ -375,7 +367,6 @@ export default function Home() {
               </div>
             </motion.div>
 
-            {/* Follow-up Card */}
             <motion.div 
               className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300"
               variants={cardVariants}
@@ -396,7 +387,6 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Action Section */}
       <motion.section 
         id="action" 
         className="py-20 bg-white"
@@ -418,7 +408,6 @@ export default function Home() {
             className="grid md:grid-cols-3 gap-8"
             variants={staggerContainer}
           >
-            {/* Donate Card */}
             <motion.div 
               className="text-center group"
               variants={cardVariants}
@@ -441,7 +430,6 @@ export default function Home() {
               </motion.button>
             </motion.div>
 
-            {/* Volunteer Card */}
             <motion.div 
               className="text-center group"
               variants={cardVariants}
@@ -464,7 +452,6 @@ export default function Home() {
               </motion.button>
             </motion.div>
 
-            {/* Share Card */}
             <motion.div 
               className="text-center group"
               variants={cardVariants}
@@ -490,7 +477,6 @@ export default function Home() {
         </div>
       </motion.section>
 
-      {/* Contact Section */}
       <motion.div 
         id="contact" 
         className="py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white"
@@ -566,7 +552,6 @@ export default function Home() {
         </div>
       </motion.div>
       
-      {/* Footer */}
       <motion.footer 
         className="bg-blue-800 text-white py-8"
         initial={{ opacity: 0 }}
@@ -577,7 +562,6 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             
-            {/* Title + Logo */}
             <motion.div 
               className="mb-4 md:mb-0"
               initial={{ x: -50, opacity: 0 }}
@@ -592,7 +576,6 @@ export default function Home() {
               <p className="opacity-70">200 S Mapleton Drive</p>
             </motion.div>
 
-            {/* Links */}
             <motion.div 
               className="flex space-x-6 text-sm opacity-70"
               initial={{ x: 50, opacity: 0 }}
@@ -615,7 +598,6 @@ export default function Home() {
             </motion.div>
           </div>
 
-          {/* Bottom Text */}
           <motion.div 
             className="border-t border-white/20 mt-8 pt-8 text-center text-sm opacity-70"
             initial={{ y: 20, opacity: 0 }}
