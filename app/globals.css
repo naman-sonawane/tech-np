@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 @import "tailwindcss";
 
 :root {
@@ -8,8 +13,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-amiri: var(--font-amiri);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +26,61 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-ubuntu);
+}
+
+
+.pixelify {
+    font-family: 'Pixelify Sans', sans-serif;
+}
+.oswald {
+    font-family: 'Oswald', sans-serif;
+}
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-0.5rem); }
+}
+
+@keyframes bob2 {
+  0%, 100% { transform: translateY(-0.5rem); }
+  50% { transform: translateY(0); }
+}
+
+
+@keyframes bob3 {
+  0%, 100% { transform: translateY(-0.3rem); }
+  50% { transform: translateY(0.2rem); }
+}
+
+
+.bob {
+  animation: bob 2s infinite ease-in-out;
+}
+
+.bob2 {
+  animation: bob2 2s infinite ease-in-out;
+}
+
+.bob3 {
+  animation: bob3 2s infinite ease-in-out;
+}
+
+::selection {
+  background-color: #add8e6; /* Light blue */
+  color: black; /* Optional: text color when selected */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #7db9f9; /* Blue */
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Optional: scrollbar track color */
+}
+
+/* Firefox */
+* {
+  scrollbar-color: #7db9f9 #f1f1f1; /* thumb and track colors */
 }
