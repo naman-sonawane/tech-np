@@ -226,7 +226,7 @@ export default function Home() {
                   src="/shootingstar.svg" 
                   alt="Shooting Star" 
                   draggable="false" 
-                  className="h-16 w-16 border border-black select-none "
+                  className="h-16 w-16 border bg-white border-black select-none "
                   whileHover={{ rotate: 15, scale: 1.1 }}
                   transition={{ duration: 0.3 }}
                 />
