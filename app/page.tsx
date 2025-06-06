@@ -233,7 +233,7 @@ export default function Home() {
 
       <motion.section 
         id="about" 
-        className="min-h-[500px] py-20 bg-gradient-to-b from-blue-300 to-blue-200 border-2 rounded-[4rem] text-left"
+        className="min-h-[500px] py-20 bg-gradient-to-b from-blue-300 to-blue-200 border-2 text-left"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
