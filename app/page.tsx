@@ -288,7 +288,7 @@ export default function Home() {
               
               <motion.span 
                 className="bob flex items-center gap-2 bg-white border border-black shadow-lg w-auto h-auto px-3 py-2 absolute top-8 right-58 md:top-18 md:right-70 z-10 whitespace-nowrap"
-                initial={{ opacity: 0, scale: 0 }}
+                initial={{ opacity: 1, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 1.2 }}
                 whileHover={{ scale: 1.1 }}
@@ -299,7 +299,7 @@ export default function Home() {
 
               <motion.span 
                 className="bob3 flex items-center gap-2 bg-white border border-black shadow-lg w-auto h-auto px-3 py-2 absolute top-32 right-8 md:top-40 md:right-12 z-10 whitespace-nowrap"
-                initial={{ opacity: 0, scale: 0 }}
+                initial={{ opacity: 1, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 1.4 }}
                 whileHover={{ scale: 1.1 }}
@@ -310,7 +310,7 @@ export default function Home() {
 
               <motion.span 
                 className="bob2 flex items-center gap-2 bg-white border border-black shadow-lg w-auto h-auto px-3 py-2 absolute bottom-8 right-58 md:bottom-18 md:right-60 z-10 whitespace-nowrap"
-                initial={{ opacity: 0, scale: 0 }}
+                initial={{ opacity: 1, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: 1.6 }}
                 whileHover={{ scale: 1.1 }}
