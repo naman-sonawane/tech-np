@@ -71,24 +71,24 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
-      <motion.img 
-        src="/Logomark.png" 
-        alt="Logomark" 
-        className="h-10 mt-4 ml-4 w-auto"
-        initial="hidden"
-        animate="visible"
-        variants={fadeInScale}
-      />
+<motion.img 
+  src="/Logomark.png" 
+  alt="Logomark" 
+  className="absolute top-4 left-4 h-10 w-auto z-40"
+  initial="hidden"
+  animate="visible"
+  variants={fadeInScale}
+/>
       
       <motion.header 
-        className="fixed w-full top-0 z-50 p-4"
-        initial={{ y: -100, opacity: 0 }}
-        animate={{ 
-          y: isVisible ? 0 : -100, 
-          opacity: isVisible ? 1 : 0 
-        }}
-        transition={{ duration: 0.3, ease: 'easeInOut' }}
-      >
+  className="fixed w-full top-0 z-50 pt-4 px-4"
+  initial={{ y: -100, opacity: 0 }}
+  animate={{ 
+    y: isVisible ? 0 : -100, 
+    opacity: isVisible ? 1 : 0 
+  }}
+  transition={{ duration: 0.3, ease: 'easeInOut' }}
+>
         <nav className="max-w-md mx-auto p-2 flex justify-between shadow-lg items-center bg-white backdrop-blur-md border-0 border-blue-400">
           <motion.button 
             onClick={() => scrollToSection('hero')}
@@ -101,7 +101,7 @@ export default function Home() {
           
           <motion.button 
             onClick={() => scrollToSection('about')}
-            className="relative text-gray-800 bluehover:text-blue-400 font-thin transition-colors duration-300 group"
+            className="relative text-gray-800 hover:text-blue-400 font-thin transition-colors duration-300 group"
             whileHover={{ scale: 1.05 }}
           >
             About
@@ -110,7 +110,7 @@ export default function Home() {
           
           <motion.button 
             onClick={() => scrollToSection('operations')}
-            className="relative text-gray-800 bluehover:text-blue-400 font-thin transition-colors duration-300 group"
+            className="relative text-gray-800 hover:text-blue-400 font-thin transition-colors duration-300 group"
             whileHover={{ scale: 1.05 }}
           >
             Operations
@@ -119,7 +119,7 @@ export default function Home() {
           
           <motion.button 
             onClick={() => scrollToSection('action')}
-            className="relative text-gray-800 bluehover:text-blue-400 font-thin transition-colors duration-300 group"
+            className="relative text-gray-800 hover:text-blue-400 font-thin transition-colors duration-300 group"
             whileHover={{ scale: 1.05 }}
           >
             Action
@@ -128,7 +128,7 @@ export default function Home() {
           
           <motion.button 
             onClick={() => scrollToSection('contact')}
-            className="relative text-gray-800 bluehover:text-blue-400 pr-4 font-thin transition-colors duration-300 group"
+            className="relative text-gray-800 hover:text-blue-400 pr-4 font-thin transition-colors duration-300 group"
             whileHover={{ scale: 1.05 }}
           >
             Contact
@@ -153,10 +153,10 @@ export default function Home() {
             transition={{ duration: 0.3 }}
           >
             <div className="flex flex-col space-y-3">
-              <button onClick={() => scrollToSection('about')} className="text-left text-gray-100 bluehover:text-blue-400 font-thin transition-colors duration-300">About</button>
-              <button onClick={() => scrollToSection('operations')} className="text-left text-gray-100 bluehover:text-blue-400 font-thin transition-colors duration-300">Operations</button>
-              <button onClick={() => scrollToSection('action')} className="text-left text-gray-100 bluehover:text-blue-400 font-thin transition-colors duration-300">Action</button>
-              <button onClick={() => scrollToSection('contact')} className="text-left text-gray-100 bluehover:text-blue-400 font-thin transition-colors duration-300">Contact</button>
+              <button onClick={() => scrollToSection('about')} className="text-left text-gray-800 hover:text-blue-400 font-thin transition-colors duration-300">About</button>
+              <button onClick={() => scrollToSection('operations')} className="text-left text-gray-100 hover:text-blue-400 font-thin transition-colors duration-300">Operations</button>
+              <button onClick={() => scrollToSection('action')} className="text-left text-gray-100 hover:text-blue-400 font-thin transition-colors duration-300">Action</button>
+              <button onClick={() => scrollToSection('contact')} className="text-left text-gray-100 hover:text-blue-400 font-thin transition-colors duration-300">Contact</button>
             </div>
           </motion.div>
         )}
@@ -207,7 +207,7 @@ export default function Home() {
             </motion.button>
             <motion.button 
               onClick={() => scrollToSection('contact')}
-              className="border-2 border-black text-black px-8 py-4 font-bold text-lg hover:bg-white bluehover:text-blue-400 transition-all duration-300"
+              className="border-2 border-black text-black px-8 py-4 font-bold text-lg hover:bg-white hover:text-blue-400 transition-all duration-300"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
