@@ -147,7 +147,7 @@ export default function Home() {
         
         {mobileMenuOpen && (
           <motion.div 
-            className="absolute top-full left-4 right-4 mt-2 bg-black/95 backdrop-blur-md border border-white/20 px-6 py-4 shadow-lg md:hidden"
+            className="absolute top-full left-4 right-4 mt-2 bg-white/95 backdrop-blur-md border border-white/20 px-6 py-4 shadow-lg md:hidden"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.3 }}
