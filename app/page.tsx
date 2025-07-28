@@ -601,7 +601,7 @@ export default function Home() {
                 <img src="/LogoFooter.png" alt="Tech 4 All Logo" className="h-8 w-auto" />
                 <p className="text-2xl font-bold oswald">TECH 4 ALL</p>
               </div>
-              <p className="opacity-70">200 S Mapleton Drive</p>
+              <p className="opacity-70">Mississauga, ON</p>
             </motion.div>
 
             <motion.div 
