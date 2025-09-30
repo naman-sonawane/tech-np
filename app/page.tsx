@@ -136,7 +136,7 @@ export default function Home() {
       />
       
       <motion.div 
-        className="absolute top-4 right-4 z-40 text-right text-gray-500 text-sm"
+        className="absolute top-4 right-4 z-[60] text-right text-gray-500 text-sm select-text"
         initial="hidden"
         animate="visible"
         variants={fadeInScale}
@@ -702,7 +702,7 @@ export default function Home() {
             variants={cardVariants}
           >
             <p className="text-2xl font-bold text-white">
-              Contact us at: <a href="mailto:gurtegrekhi@tech4all.com" className="text-blue-300 hover:text-blue-400 transition-colors duration-300">gurtegrekhi@tech4all.com</a> or send us a message or call at <a href="tel:289-242-4196" className="text-blue-300 hover:text-blue-400 transition-colors duration-300">289-242-4196</a>
+              Contact us at: <span className="text-blue-300">gurtegrekhi@tech4all.com</span> or send us a message or call at <span className="text-blue-300">289-242-4196</span>
             </p>
           </motion.div>
         </div>
