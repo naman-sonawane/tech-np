@@ -6,6 +6,15 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
+  const [formData, setFormData] = useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    title: '',
+    message: ''
+  });
+  const [formStatus, setFormStatus] = useState('');
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -24,12 +33,9 @@ export default function Home() {
     const controlNavbar = () => {
       const currentScrollY = window.scrollY;
       
-      // Show navbar when at top of page
       if (currentScrollY < 10) {
         setIsVisible(true);
-      }
-      // Hide navbar when scrolling down, show when scrolling up
-      else if (currentScrollY > lastScrollY) {
+      } else if (currentScrollY > lastScrollY) {
         setIsVisible(false);
       } else {
         setIsVisible(true);
@@ -41,6 +47,55 @@ export default function Home() {
     window.addEventListener('scroll', controlNavbar);
     return () => window.removeEventListener('scroll', controlNavbar);
   }, [lastScrollY]);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.title) {
+      setFormStatus('Please fill in all required fields.');
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setFormStatus('Please enter a valid email address.');
+      return;
+    }
+
+    setFormStatus('Sending...');
+
+    const subject = encodeURIComponent(formData.title);
+    const body = encodeURIComponent(
+      `Name: ${formData.firstName} ${formData.lastName}\n` +
+      `Email: ${formData.email}\n` +
+      `Phone: ${formData.phone || 'Not provided'}\n` +
+      `Title: ${formData.title}\n\n` +
+      `Message:\n${formData.message || 'No message provided'}`
+    );
+    
+    window.location.href = `mailto:gurtegrekhi@tech4all.com?subject=${subject}&body=${body}`;
+    
+    setFormStatus('Email client opened! Please send the email.');
+    
+    setTimeout(() => {
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        phone: '',
+        title: '',
+        message: ''
+      });
+      setFormStatus('');
+    }, 3000);
+  };
 
   const textVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -71,24 +126,24 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-white">
-<motion.img 
-  src="/Logomark.png" 
-  alt="Logomark" 
-  className="absolute top-4 left-4 h-10 w-auto z-40"
-  initial="hidden"
-  animate="visible"
-  variants={fadeInScale}
-/>
+      <motion.img 
+        src="/Logomark.png" 
+        alt="Logomark" 
+        className="absolute top-4 left-4 h-10 w-auto z-40"
+        initial="hidden"
+        animate="visible"
+        variants={fadeInScale}
+      />
       
       <motion.header 
-  className="fixed w-full top-0 z-50 pt-4 px-4"
-  initial={{ y: -100, opacity: 0 }}
-  animate={{ 
-    y: isVisible ? 0 : -100, 
-    opacity: isVisible ? 1 : 0 
-  }}
-  transition={{ duration: 0.3, ease: 'easeInOut' }}
->
+        className="fixed w-full top-0 z-50 pt-4 px-4"
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ 
+          y: isVisible ? 0 : -100, 
+          opacity: isVisible ? 1 : 0 
+        }}
+        transition={{ duration: 0.3, ease: 'easeInOut' }}
+      >
         <nav className="max-w-md mx-auto p-2 flex justify-between shadow-lg items-center bg-white backdrop-blur-md border-0 border-blue-400">
           <motion.button 
             onClick={() => scrollToSection('hero')}
@@ -154,9 +209,9 @@ export default function Home() {
           >
             <div className="flex flex-col space-y-3">
               <button onClick={() => scrollToSection('about')} className="text-left text-gray-800 hover:text-blue-400 font-thin transition-colors duration-300">About</button>
-              <button onClick={() => scrollToSection('operations')} className="text-left text-gray-100 hover:text-blue-400 font-thin transition-colors duration-300">Operations</button>
-              <button onClick={() => scrollToSection('action')} className="text-left text-gray-100 hover:text-blue-400 font-thin transition-colors duration-300">Action</button>
-              <button onClick={() => scrollToSection('contact')} className="text-left text-gray-100 hover:text-blue-400 font-thin transition-colors duration-300">Contact</button>
+              <button onClick={() => scrollToSection('operations')} className="text-left text-gray-800 hover:text-blue-400 font-thin transition-colors duration-300">Operations</button>
+              <button onClick={() => scrollToSection('action')} className="text-left text-gray-800 hover:text-blue-400 font-thin transition-colors duration-300">Action</button>
+              <button onClick={() => scrollToSection('contact')} className="text-left text-gray-800 hover:text-blue-400 font-thin transition-colors duration-300">Contact</button>
             </div>
           </motion.div>
         )}
@@ -531,23 +586,75 @@ export default function Home() {
               <p className="text-xl opacity-90 pb-8 max-w-3xl mx-auto">
                 Whether you have gently used devices to donate, want to make a financial contribution, are interested in volunteering your time and expertise, or have any questions, we&apos;d love to hear from you.
               </p>
-              <div className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
-                  <input type="text" placeholder="First name*" className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300" />
-                  <input type="text" placeholder="Last name*" className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300" />
+                  <input 
+                    type="text" 
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleInputChange}
+                    placeholder="First name*" 
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300" 
+                    required
+                  />
+                  <input 
+                    type="text" 
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleInputChange}
+                    placeholder="Last name*" 
+                    className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300" 
+                    required
+                  />
                 </div>
-                <input type="email" placeholder="Email*" className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300" />
-                <input type="tel" placeholder="Phone" className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300" />
-                <input type="text" placeholder="Title*" className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300" />
-                <textarea placeholder="Message" rows={4} className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300 resize-none"></textarea>
+                <input 
+                  type="email" 
+                  name="email"
+                  value={formData.email}
+                  onChange={handleInputChange}
+                  placeholder="Email*" 
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300" 
+                  required
+                />
+                <input 
+                  type="tel" 
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  placeholder="Phone" 
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300" 
+                />
+                <input 
+                  type="text" 
+                  name="title"
+                  value={formData.title}
+                  onChange={handleInputChange}
+                  placeholder="Title*" 
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300" 
+                  required
+                />
+                <textarea 
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  placeholder="Message" 
+                  rows={4} 
+                  className="w-full px-4 py-3 bg-white/10 border border-white/20 text-white placeholder-white/70 focus:bg-white/20 focus:border-blue-300 transition-all duration-300 resize-none"
+                ></textarea>
+                {formStatus && (
+                  <p className={`text-sm ${formStatus.includes('Error') || formStatus.includes('Please') ? 'text-red-300' : 'text-green-300'}`}>
+                    {formStatus}
+                  </p>
+                )}
                 <motion.button 
+                  type="submit"
                   className="bg-blue-300 text-blue-800 px-8 py-3 font-bold hover:bg-blue-400 transition-all duration-300"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
                   Send Message
                 </motion.button>
-              </div>
+              </form>
             </motion.div>
             
             <motion.div variants={cardVariants}>
@@ -597,11 +704,19 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center space-x-4 mb-2">
                 <img src="/LogoFooter.png" alt="Tech 4 All Logo" className="h-8 w-auto" />
                 <p className="text-2xl font-bold oswald">TECH 4 ALL</p>
               </div>
               <p className="opacity-70">Mississauga, ON</p>
+              <div className="mt-4 space-y-1">
+                <a href="mailto:gurtegrekhi@tech4all.com" className="block opacity-70 hover:opacity-100 hover:text-blue-300 transition-colors duration-300">
+                  gurtegrekhi@tech4all.com
+                </a>
+                <a href="tel:2892424196" className="block opacity-70 hover:opacity-100 hover:text-blue-300 transition-colors duration-300">
+                  (289) 242-4196
+                </a>
+              </div>
             </motion.div>
 
             <motion.div 
