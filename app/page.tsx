@@ -135,6 +135,16 @@ export default function Home() {
         variants={fadeInScale}
       />
       
+      <motion.div 
+        className="absolute top-4 right-4 z-40 text-right text-gray-500 text-sm"
+        initial="hidden"
+        animate="visible"
+        variants={fadeInScale}
+      >
+        <div>gurtegrekhi@tech4all.com</div>
+        <div>289-242-4196</div>
+      </motion.div>
+      
       <motion.header 
         className="fixed w-full top-0 z-50 pt-4 px-4"
         initial={{ y: -100, opacity: 0 }}
@@ -144,7 +154,7 @@ export default function Home() {
         }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
       >
-        <nav className="max-w-md mx-auto p-2 flex justify-between shadow-lg items-center bg-white backdrop-blur-md border-0 border-blue-400">
+        <nav className="max-w-md mx-auto px-8 py-3 flex justify-between shadow-lg items-center bg-white backdrop-blur-md border-0 border-blue-400 rounded-full">
           <motion.button 
             onClick={() => scrollToSection('hero')}
             className="text-2xl oswald font-black text-blue-500 transition-transform duration-300"
@@ -577,6 +587,7 @@ export default function Home() {
             <div className="w-24 h-1 bg-blue-300 mx-auto mb-10"></div>
           </motion.div>
           
+          {/* 
           <motion.div 
             className="grid lg:grid-cols-2 gap-12"
             variants={staggerContainer}
@@ -683,6 +694,16 @@ export default function Home() {
                 </p>
               </div>
             </motion.div>
+          </motion.div>
+          */}
+          
+          <motion.div 
+            className="text-center"
+            variants={cardVariants}
+          >
+            <p className="text-2xl font-bold text-white">
+              Contact us at: <a href="mailto:gurtegrekhi@tech4all.com" className="text-blue-300 hover:text-blue-400 transition-colors duration-300">gurtegrekhi@tech4all.com</a> or send us a message or call at <a href="tel:289-242-4196" className="text-blue-300 hover:text-blue-400 transition-colors duration-300">289-242-4196</a>
+            </p>
           </motion.div>
         </div>
       </motion.div>
