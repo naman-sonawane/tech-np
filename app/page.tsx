@@ -918,7 +918,10 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <p>© 2024 Tech 4 All. Empowering communities through technology.</p>
+            <p>
+              © {new Date().getFullYear()} Tech 4 All. Empowering communities
+              through technology.
+            </p>
           </motion.div>
         </div>
       </motion.footer>
