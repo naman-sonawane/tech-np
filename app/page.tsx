@@ -6,15 +6,7 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [formData, setFormData] = useState({
-    firstName: "",
-    lastName: "",
-    email: "",
-    phone: "",
-    title: "",
-    message: "",
-  });
-  const [formStatus, setFormStatus] = useState("");
+  // Form state removed since forms are commented out
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -48,61 +40,7 @@ export default function Home() {
     return () => window.removeEventListener("scroll", controlNavbar);
   }, [lastScrollY]);
 
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (
-      !formData.firstName ||
-      !formData.lastName ||
-      !formData.email ||
-      !formData.title
-    ) {
-      setFormStatus("Please fill in all required fields.");
-      return;
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(formData.email)) {
-      setFormStatus("Please enter a valid email address.");
-      return;
-    }
-
-    setFormStatus("Sending...");
-
-    const subject = encodeURIComponent(formData.title);
-    const body = encodeURIComponent(
-      `Name: ${formData.firstName} ${formData.lastName}\n` +
-        `Email: ${formData.email}\n` +
-        `Phone: ${formData.phone || "Not provided"}\n` +
-        `Title: ${formData.title}\n\n` +
-        `Message:\n${formData.message || "No message provided"}`
-    );
-
-    window.location.href = `mailto:gurtegrekhi@tech4all.com?subject=${subject}&body=${body}`;
-
-    setFormStatus("Email client opened! Please send the email.");
-
-    setTimeout(() => {
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        title: "",
-        message: "",
-      });
-      setFormStatus("");
-    }, 3000);
-  };
+  // Form handlers removed since forms are commented out
 
   const textVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -745,7 +683,7 @@ export default function Home() {
             <p className="text-xl opacity-90 mt-20 max-w-3xl mx-auto">
               Whether you have gently used devices to donate, want to make a
               financial contribution, are interested in volunteering your time
-              and expertise, or have any questions, we'd love to hear from you.
+              and expertise, or have any questions, we&apos;d love to hear from you.
             </p>
           </motion.div>
 
