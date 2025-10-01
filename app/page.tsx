@@ -82,14 +82,14 @@ export default function Home() {
       <motion.img
         src="/Logomark.png"
         alt="Logomark"
-        className="absolute top-4 left-4 h-10 w-auto z-40"
+        className="absolute top-4 left-4 h-10 w-auto z-40 hidden md:block"
         initial="hidden"
         animate="visible"
         variants={fadeInScale}
       />
 
       <motion.div
-        className="absolute top-4 right-4 z-[60] text-right text-gray-500 text-sm select-text"
+        className="absolute top-4 right-4 z-[60] text-right text-gray-500 text-sm select-text hidden md:block"
         initial="hidden"
         animate="visible"
         variants={fadeInScale}
@@ -107,7 +107,8 @@ export default function Home() {
         }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
       >
-        <nav className="max-w-md mx-auto px-8 py-3 flex justify-between shadow-lg items-center bg-white backdrop-blur-md border-0 border-blue-400 rounded-full">
+        {/* Desktop Navigation Pill */}
+        <nav className="hidden md:flex max-w-md mx-auto px-8 py-3 justify-between shadow-lg items-center bg-white backdrop-blur-md border-0 border-blue-400 rounded-full">
           <motion.button
             onClick={() => scrollToSection("hero")}
             className="text-2xl oswald font-black text-blue-500 transition-transform duration-300"
@@ -122,41 +123,43 @@ export default function Home() {
             />
           </motion.button>
 
-          <motion.button
-            onClick={() => scrollToSection("about")}
-            className="relative text-gray-800 hover:text-blue-400 font-thin transition-colors duration-300 group"
-            whileHover={{ scale: 1.05 }}
-          >
-            About
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-          </motion.button>
+          <div className="hidden md:flex space-x-6">
+            <motion.button
+              onClick={() => scrollToSection("about")}
+              className="relative text-gray-800 hover:text-blue-400 font-thin transition-colors duration-300 group"
+              whileHover={{ scale: 1.05 }}
+            >
+              About
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+            </motion.button>
 
-          <motion.button
-            onClick={() => scrollToSection("operations")}
-            className="relative text-gray-800 hover:text-blue-400 font-thin transition-colors duration-300 group"
-            whileHover={{ scale: 1.05 }}
-          >
-            Operations
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-          </motion.button>
+            <motion.button
+              onClick={() => scrollToSection("operations")}
+              className="relative text-gray-800 hover:text-blue-400 font-thin transition-colors duration-300 group"
+              whileHover={{ scale: 1.05 }}
+            >
+              Operations
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+            </motion.button>
 
-          <motion.button
-            onClick={() => scrollToSection("action")}
-            className="relative text-gray-800 hover:text-blue-400 font-thin transition-colors duration-300 group"
-            whileHover={{ scale: 1.05 }}
-          >
-            Action
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-          </motion.button>
+            <motion.button
+              onClick={() => scrollToSection("action")}
+              className="relative text-gray-800 hover:text-blue-400 font-thin transition-colors duration-300 group"
+              whileHover={{ scale: 1.05 }}
+            >
+              Action
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+            </motion.button>
 
-          <motion.button
-            onClick={() => scrollToSection("contact")}
-            className="relative text-gray-800 hover:text-blue-400 pr-4 font-thin transition-colors duration-300 group"
-            whileHover={{ scale: 1.05 }}
-          >
-            Donate
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
-          </motion.button>
+            <motion.button
+              onClick={() => scrollToSection("contact")}
+              className="relative text-gray-800 hover:text-blue-400 font-thin transition-colors duration-300 group"
+              whileHover={{ scale: 1.05 }}
+            >
+              Donate
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
+            </motion.button>
+          </div>
 
           <button
             className="md:hidden text-blue-600"
@@ -177,6 +180,42 @@ export default function Home() {
             </svg>
           </button>
         </nav>
+
+        {/* Mobile Navigation - No Pill Background */}
+        <div className="md:hidden flex justify-between items-center px-4">
+          <motion.button
+            onClick={() => scrollToSection("hero")}
+            className="text-2xl oswald font-black text-blue-500 transition-transform duration-300"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <img
+              src="/LogoNav.png"
+              draggable="false"
+              alt="Logo"
+              className="h-10 w-auto"
+            />
+          </motion.button>
+
+          <button
+            className="text-blue-600"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
 
         {mobileMenuOpen && (
           <motion.div
@@ -683,7 +722,8 @@ export default function Home() {
             <p className="text-xl opacity-90 mt-20 max-w-3xl mx-auto">
               Whether you have gently used devices to donate, want to make a
               financial contribution, are interested in volunteering your time
-              and expertise, or have any questions, we&apos;d love to hear from you.
+              and expertise, or have any questions, we&apos;d love to hear from
+              you.
             </p>
           </motion.div>
 
