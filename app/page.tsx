@@ -94,7 +94,7 @@ export default function Home() {
         animate="visible"
         variants={fadeInScale}
       >
-        <div>gurtegrekhi@tech4all.com</div>
+        <div>gurtegrekhi@tech4all.ca</div>
         <div>289-242-4196</div>
       </motion.div>
 
@@ -840,7 +840,7 @@ export default function Home() {
           <motion.div className="text-center" variants={cardVariants}>
             <p className="text-2xl font-bold text-white">
               Contact us at:{" "}
-              <span className="text-blue-300">gurtegrekhi@tech4all.com</span> or
+              <span className="text-blue-300">gurtegrekhi@tech4all.ca</span> or
               send us a message or call at{" "}
               <span className="text-blue-300">289-242-4196</span>
             </p>
@@ -875,10 +875,10 @@ export default function Home() {
               <p className="opacity-70">Mississauga, ON</p>
               <div className="mt-4 space-y-1">
                 <a
-                  href="mailto:gurtegrekhi@tech4all.com"
+                  href="mailto:gurtegrekhi@tech4all.ca"
                   className="block opacity-70 hover:opacity-100 hover:text-blue-300 transition-colors duration-300"
                 >
-                  gurtegrekhi@tech4all.com
+                  gurtegrekhi@tech4all.ca
                 </a>
                 <a
                   href="tel:2892424196"
